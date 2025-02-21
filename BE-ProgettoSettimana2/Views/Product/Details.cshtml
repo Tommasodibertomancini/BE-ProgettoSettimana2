@@ -5,7 +5,7 @@
 }
 
 <div class="container mt-4">
-    <div class="card">
+    <div class="card d-flex">
         <div class="card-header bg-danger text-black">
             <h1 class="my-3">@Model.Name</h1>
         </div>
@@ -30,9 +30,12 @@
                 </div>
             </div>
 
-            <div class="row mt-4">
+            <div class="row mt-4 d-flex">
                 <div class="col-md-12 text-center">
                     <a href="@Url.Action("Index", "Product")" class="btn btn-dark">Torna alla Lista Prodotti</a>
+                    <form asp-action="Delete" asp-route-id="@Model.Id" method="post" style="display:inline">
+                        <button type="submit" class="btn btn-danger text-black">Rimuovi</button>
+                    </form>
                 </div>
             </div>
         </div>

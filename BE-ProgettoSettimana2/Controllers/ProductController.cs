@@ -140,5 +140,17 @@ namespace BE_ProgettoSettimana2.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            var product = ProductRepository.GetProductById(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            ProductRepository.GetProducts().Remove(product);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
