@@ -13,8 +13,8 @@ namespace BE_ProgettoSettimana2.Models
         public decimal Price { get; set; }
 
         [Required(ErrorMessage = "è richiesta una descrizione")]
-        [MinLength(10, ErrorMessage = "La descrizione è troppo corta")]
-        [MaxLength(1000, ErrorMessage = "La descrizione è troppo lunga")]
+        [MinLength(10, ErrorMessage = "La descrizione deve avere più di 10 caratteri")]
+        [MaxLength(1000, ErrorMessage = "La descrizione deve avere meno di 1000 caratteri")]
         public string? Description { get; set; }
 
         public string? CoverImageBase64 { get; set; }
@@ -24,10 +24,10 @@ namespace BE_ProgettoSettimana2.Models
         [Required(ErrorMessage = "Immagine di Cover obbligatoria")]
         public IFormFile? CoverImageFile { get; set; }
 
-        [Required(ErrorMessage = "immagine obbligatoria")]
+        [Required(ErrorMessage = "Immagine obbligatoria")]
         public IFormFile? Image1File { get; set; }
 
-        [Required(ErrorMessage = "immagine obbligatoria")]
+        [Required(ErrorMessage = "Immagine obbligatoria")]
         public IFormFile? Image2File { get; set; }
 
     }
