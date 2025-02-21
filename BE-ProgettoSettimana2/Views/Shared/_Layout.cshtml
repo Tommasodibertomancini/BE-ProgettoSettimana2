@@ -12,17 +12,18 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-danger">
-            <a class="navbar-brand ms-2" href="@Url.Action("Index", "Product")">Jordan Sneakers Shop</a>
+            <a class="navbar-brand ms-2" href="@Url.Action("Index", "Product")">
+                <img src="~/img/jordanlogo.png" class="logo" alt="Alternate Text" /> Jordan Sneakers Shop</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("Index", "Product")">Home</a>
+                        <a class="nav-link text-black" href="@Url.Action("Index", "Product")">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("Create", "Product")">Aggiungi Prodotto</a>
+                        <a class="nav-link text-black" href="@Url.Action("Create", "Product")">Aggiungi Prodotto</a>
                     </li>
                 </ul>
             </div>
