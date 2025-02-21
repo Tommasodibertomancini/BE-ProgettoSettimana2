@@ -1,0 +1,25 @@
+﻿@model IEnumerable<BE_ProgettoSettimana2.Models.Product>
+
+@{
+	ViewData["Title"] = "Product List";
+
+}
+
+<h1 class="my-4">Lista Prodotti</h1>
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <img class="card-img-top img-fluid h-50" src="data:image/png;base64,@product.CoverImageBase64" alt="@product.Name" />
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text">Prezzo: @product.Price.ToString("C")</p>
+                    <a href="@Url.Action("Details", "Product", new { id = product.Id })" class="btn btn-danger text-black">Dettagli</a>
+                    <a href="@Url.Action("Edit", "Product", new { id = product.Id })" class="btn btn-dark text-white">Modifica</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,40 @@
+﻿@model BE_ProgettoSettimana2.Models.Product
+
+@{
+	ViewData["Title"] = "Product Details";
+}
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-danger text-black">
+            <h1 class="my-3">@Model.Name</h1>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-fluid rounded" src="data:image/png;base64,@Model.CoverImageBase64" alt="@Model.Name" />
+                </div>
+                <div class="col-md-6">
+                    <h3 class="text-danger fw-bold">Prezzo: @Model.Price.ToString("C")</h3>
+                    <p>Descrizione prodotto:</p>
+                    <p class="text-justify">@Model.Description</p>
+                </div>
+            </div>
+
+            <div class="row mt-4 border-top border-danger">
+                <div class="col-md-6 text-center">
+                    <img class="img-fluid rounded w-25 mb-3 mt-3" src="data:image/png;base64,@Model.Image1Base64" alt="@Model.Name" />
+                </div>
+                <div class="col-md-6 text-center">
+                    <img class="img-fluid rounded w-25 mt-3" src="data:image/png;base64,@Model.Image2Base64" alt="@Model.Name" />
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-12 text-center">
+                    <a href="@Url.Action("Index", "Product")" class="btn btn-dark">Torna alla Lista Prodotti</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
